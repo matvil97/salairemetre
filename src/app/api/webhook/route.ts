@@ -3,8 +3,7 @@ import { stripe } from '@/lib/stripe'
 import { createServiceClient } from '@/lib/supabase'
 import type Stripe from 'stripe'
 
-// Désactiver le body parser Next.js — Stripe a besoin du raw body pour valider la signature
-export const config = { api: { bodyParser: false } }
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   const body = await req.text()
